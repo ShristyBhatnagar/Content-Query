@@ -479,7 +479,7 @@ export class ContentQueryService implements IContentQueryService {
    * @param itemSelectorEnabled: Defines whether to render the item selector element in the template
    *************************************************************************************************/
   public generateDefaultTemplate(viewFields: string[], itemSelectorEnabled: boolean): string {
-    let viewFieldsStr = viewFields.map((field) => { return Text.format("                    <span class='ms-DetailsRow-cell'><strong>{0}: </strong>\{\{{0}.textValue\}\}</span>", field); }).join("\n");
+    let viewFieldsStr = viewFields.map((field) => { return Text.format("                    <span class='ms-DetailsRow-cell' style='display:flex;flex-direction:column;border:1px solid white'><div style='border-bottom:1px solid white;  border-collapse:collapse; background-color: #E8E8E8; color: black; padding:10px;'><strong>{0}: </strong></div><div style='padding:10px;'>\{\{{0}.textValue\}\}</div></span>", field); }).join("\n");
     let selectItemStr = "\n                    <span><button class='selectItem' data-itemId='{{ID.textValue}}'>Select</button></span>";
     let template = Text.format(`<style type="text/css">
       .dynamic-template h2 {
@@ -510,6 +510,15 @@ export class ContentQueryService implements IContentQueryService {
           display: block;
           font-size: 12px;
       }
+
+          
+      .difContainer{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: space-around;
+      }
+
   </style>
 
   <div class="dynamic-template">
@@ -519,7 +528,15 @@ export class ContentQueryService implements IContentQueryService {
               <div class="dynamic-item">
                   <h3>Result #{{@index}}</h3>
                   <div class="dynamic-item-fields">
-  {1}{2}
+                  <div class="difContainer">
+                      <div class="difTitle" style='display:flex'>
+                        {1}
+                      </div>
+                      <div class="difBody">
+                        {2}
+                      </div>
+                  </div>
+                  
                   </div>
               </div>
           {{/each}}

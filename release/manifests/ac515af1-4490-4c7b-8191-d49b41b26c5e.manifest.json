@@ -36,7 +36,7 @@
     "scriptResources": {
       "content-query-web-part": {
         "type": "path",
-        "path": "content-query-web-part.js"
+        "path": "content-query-web-part_4a65e852f0b8ddc6ccfc.js"
       },
       "@microsoft/sp-property-pane": {
         "type": "component",
@@ -45,7 +45,7 @@
       },
       "contentQueryStrings": {
         "type": "path",
-        "path": "contentQueryStrings_en-us.js"
+        "path": "contentQueryStrings_en-us_8abd5edbdd9659767a79c1b1e146c3ef.js"
       },
       "@microsoft/sp-component-base": {
         "type": "component",
